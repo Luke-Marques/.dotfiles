@@ -1,0 +1,112 @@
+format = """
+$username\
+$hostname\
+$directory\
+$python\
+$git_branch\
+$git_state\
+$cmd_duration\
+$line_break\
+$battery\
+$character"""
+
+# Sets user-defined palette
+palette = "rose-pine"
+
+[character]
+success_symbol = '[[>](bold white) [\[](bold white)\$[\]](bold white)](bold green)'
+error_symbol = '[[>](bold white) [\[](bold white)![\]](bold white)](bold red)'
+
+[battery]
+format = "[${percentage} ]($style)"
+
+[[battery.display]]
+threshold = 30
+style = "bold yellow"
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[username]
+style_user = "bold white"
+format = "[$user]($style)"
+disabled = false
+show_always = true
+aliases = { "k1763489" = "luke" }
+
+[hostname]
+style = "bold white"
+format = "[@](subtle)[$hostname]($style)"
+ssh_only = true
+
+[directory]
+truncate_to_repo = true
+truncation_length = 4
+style = "bold iris"
+format = " [in](subtle) [$path]($style)[$read_only]($read_only_style) "
+# truncation_symbol = ".../"
+home_symbol = "~"
+
+[directory.substitutions]
+"/scratch/users/k1763489" = "scratch-home"
+
+[git_branch]
+format = "[[on](subtle) $branch]($style) "
+style = "bold rose"
+
+[git_state]
+style = "bold love"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "muted"
+
+[python]
+format = "[[via](subtle) [python](bold foam):$version](foam) "
+version_format = "$major.$minor"
+
+[palettes.catppuccin-mocha]
+flamingo = "#f2cdcd"
+rosewater = "#f5e0dc"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+mantle = "#181825"
+crust = "#11111b"
+base = "#1e1e2e"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+
+[palettes.rose-pine]
+base = '#191724'
+surface = '#1f1d2e'
+overlay = '#26233a'
+muted = '#6e6a86'
+subtle = '#908caa'
+text = '#e0def4'
+love = '#eb6f92'
+gold = '#f6c177'
+rose = '#ebbcba'
+pine = '#31748f'
+foam = '#9ccfd8'
+iris = '#c4a7e7'
+highlight_low = '#21202e'
+highlight_med = '#403d52'
+highlight_high = '#524f67'

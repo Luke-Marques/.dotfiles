@@ -1,0 +1,9 @@
+# Basic
+alias ll="ls -l"
+alias la="ls -la"
+
+# Better version of ls
+alias ls="exa"
+
+# SSH aliases
+alias create="ssh create"
