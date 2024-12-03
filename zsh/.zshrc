@@ -1,5 +1,24 @@
 # ZSH Configuration
 
+# --- Oh My ZSH -----------------------------------------------------------------------
+
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME=""
+
+# --- Pyenv ---------------------------------------------------------------------------
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# --- Poetry --------------------------------------------------------------------------
+
+export PATH="$HOME/.local/bin:$PATH"
+
+# --- Spark ---------------------------------------------------------------------------
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
+
 # --- ZSH PLUGINS ---------------------------------------------------------------------
 
 plugins=(
@@ -8,49 +27,24 @@ plugins=(
     zsh-syntax-highlighting
     docker
 )
-
-# --- CONDA ---------------------------------------------------------------------------
-
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/k1763489/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/k1763489/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/k1763489/opt/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/k1763489/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-
-# --- JULIA ---------------------------------------------------------------------------
-
-# !! Contents within this block are managed by juliaup !!
-path=('/Users/k1763489/.juliaup/bin' $path)
-export PATH
+source $ZSH/oh-my-zsh.sh
 
 # --- PIPX ----------------------------------------------------------------------------
 
 # Created by `pipx` on 2024-02-19 16:12:22
 export PATH="$PATH:/Users/k1763489/.local/bin"
 
-# --- GO ------------------------------------------------------------------------------
-
-# Add go to Path
-export GOPATH="$HOME/go"
-export PATH="$PATH:$GOPATH/bin"
-
-# --- HOMEBREW ------------------------------------------------------------------------
-
-export PATH="$PATH:/$HOME/homebrew/bin"
-alias brew="~/homebrew/bin/brew"
-export DYLD_LIBRARY_PATH="$(brew --prefix)lib:$DYLD_LIBRARY_PATH"
-
 # --- ENVIRONMENT VARIABLES -----------------------------------------------------------
 
 # Set config dotfiles location
 export XDG_CONFIG_HOME=$HOME/.config/
+
+# Set default editor
+export EDITOR=hx
+export VISUAL="$EDITOR"
+
+# Set bat theme
+export BAT_THEME="kanagawa"
 
 # --- ALIASES -------------------------------------------------------------------------
 
@@ -59,23 +53,17 @@ if [ -f ~/.zsh_aliases ]; then
   source ~/.zsh_aliases
 fi
 
-# Add love2d alias
-alias love="/Applications/love.app/Contents/MacOS/love"
+# --- ZOXIDE --------------------------------------------------------------------------
+
+eval "$(zoxide init zsh)"
+
+# --- DIRENV --------------------------------------------------------------------------
+
+eval "$(direnv hook zsh)"
 
 # --- PROMPT CONFIGURATION ------------------------------------------------------------
 
 # Set up Starship prompt
 eval "$(starship init zsh)"
 
-# # Set up oh-my-zsh
-# export ZSH="$HOME/.oh-my-zsh"
-# ZSH_THEME="bureau"
-# source $ZSH/oh-my-zsh.sh
-
-# --- NEOFETCH ------------------------------------------------------------------------
-
-neofetch
-
 # --- FIN -----------------------------------------------------------------------------
-
-. "$HOME/.cargo/env"

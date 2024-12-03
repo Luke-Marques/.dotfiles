@@ -1,0 +1,25 @@
+inherits = "kanagawa-dragon"
+
+# Buffers
+"ui.bufferline" = { fg = "dragonGray3", bg = "dragonBlack4" }
+"ui.bufferline.active" = { fg = "fujiWhite", bg = "dragonBlack5" }
+"ui.bufferline.background" = { bg = "dragonBlack3" }
+
+# Gutter
+"ui.gutter" = { fg = "dragonBlack2", bg = "dragonBlack2" }
+"ui.linenr" = { fg = "dragonBlack6", bg = "dragonBlack2" }
+"ui.linenr.selected" = { fg = "roninYellow", modifiers = ["bold"] }
+
+# Cursor line/column highlight
+"ui.cursorline.primary" = { bg = "dragonBlack4" }
+"ui.cursorcolumn.primary" = { bg = "dragonBlack4" }
+
+# Status bar
+"ui.statusline" = { fg = "oldWhite", bg = "dragonBlack1" }
+"ui.statusline.inactive" = { fg = "fujiGray", bg = "dragonBlack2" }
+
+# Popups
+"ui.popup" = { fg = "oldWhite", bg = "dragonBlack1" }
+
+# Ruler
+"ui.virtual.ruler" = { bg = "dragonBlack4" }

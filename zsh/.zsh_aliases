@@ -1,9 +1,18 @@
-# Basic
-alias ll="ls -l"
-alias la="ls -la"
+# Better ls
+alias ls="eza -a --long --icons always"
+alias t="eza -a -T -L 1"
 
-# Better version of ls
-alias ls="exa"
+# Better cd
+alias cd="z"
+
+# Better cat
+alias cat="bat"
+
+# Trash > rm
+alias rm="trash"
 
 # SSH aliases
 alias create="ssh create"
+
+# Call dotfiles setup script
+alias setup-mac="bash ~/.dotfiles/setup.sh"

@@ -43,7 +43,7 @@ ssh_only = true
 [directory]
 truncate_to_repo = true
 truncation_length = 4
-style = "bold iris"
+style = "bold purple"
 format = " [in](subtle) [$path]($style)[$read_only]($read_only_style) "
 # truncation_symbol = ".../"
 home_symbol = "~"
@@ -53,17 +53,17 @@ home_symbol = "~"
 
 [git_branch]
 format = "[[on](subtle) $branch]($style) "
-style = "bold rose"
+style = "bold pink"
 
 [git_state]
-style = "bold love"
+style = "bold pink"
 
 [cmd_duration]
 format = "[$duration]($style) "
 style = "muted"
 
 [python]
-format = "[[via](subtle) [python](bold foam):$version](foam) "
+format = "[[via](subtle) [python](bold green):$version](green) "
 version_format = "$major.$minor"
 
 [palettes.catppuccin-mocha]
