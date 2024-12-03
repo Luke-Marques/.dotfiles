@@ -15,6 +15,10 @@ while [[ $# -gt 0 ]]; do
       SETUP_GIT=true
       shift  # Remove --setup-git from processing
       ;;
+    --install-rust)
+      RUST=true
+      shift  # Remove --install-rust from processing
+      ;;
     *)
       echo "Unknown option: $1"
       echo "Usagee: ./setup.sh [--skip-cask]"
@@ -106,6 +110,13 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # Setup git
 if [ "$SETUP_GIT" = true ]; then
   source ./git_setup.sh
+fi
+
+# Install rust(up)
+if [ "$RUST" = true ]; then
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  rustup update
+  rustup component add rust-analyzer  # Experimental rust language server
 fi
 
 echo ""
