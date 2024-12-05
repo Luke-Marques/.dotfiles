@@ -1,3 +1,8 @@
 gui:
   nerdFontsVersion: "3"
   border: single
+
+keybinding:
+  universal:
+    diffingMenu-alt: <disabled>
+
