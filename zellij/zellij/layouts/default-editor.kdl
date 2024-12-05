@@ -35,6 +35,12 @@ layout {
                 format_right   "{datetime}"
                 format_space   ""
 
+                // Border
+                border_enabled  "true"
+                border_char     "─"
+                border_format   "#[fg=$dragon_black4,bold]{char}"
+                border_position "bottom"
+
                 // Modes
                 mode_normal        "#[bg=$dragon_black5,fg=$dragon_black0,bold] NORMAL#[bg=$dragon_black0,fg=$dragon_black5]█"
                 mode_locked        "#[bg=$dragon_red,fg=$dragon_black0,bold] LOCKED#[bg=$dragon_black0,fg=$dragon_red]█"
