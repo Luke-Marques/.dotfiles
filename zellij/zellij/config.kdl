@@ -160,8 +160,11 @@ keybinds clear-defaults=true{
     }
     shared_except "locked" {
         bind "Ctrl g" { SwitchToMode "Locked"; }
-        bind "Ctrl q" { Quit; }
-        // bind "Alt f" { ToggleFloatingPanes; }
+        bind "Ctrl q" {
+          LaunchOrFocusPlugin "zj-quit" {
+            floating true
+          }
+        }        // bind "Alt f" { ToggleFloatingPanes; }
         // bind "Alt n" { NewPane; }
         // bind "Alt i" { MoveTab "Left"; }
         // bind "Alt o" { MoveTab "Right"; }
@@ -184,10 +187,10 @@ keybinds clear-defaults=true{
         bind "Ctrl n" { SwitchToMode "Resize"; }
     }
     shared_except "scroll" "locked" {
-        // bind "Ctrl s" { SwitchToMode "Scroll"; }
+        bind "Ctrl y" { SwitchToMode "Scroll"; }
     }
     shared_except "session" "locked" {
-        // bind "Ctrl o" { SwitchToMode "Session"; }
+        bind "Ctrl e" { SwitchToMode "Session"; }
     }
     shared_except "tab" "locked" {
         bind "Ctrl t" { SwitchToMode "Tab"; }
@@ -216,6 +219,7 @@ plugins {
     }
     configuration location="zellij:configuration"
     plugin-manager location="zellij:plugin-manager"
+    zj-quit location="file:~/.config/zellij/bin/zj-quit.wasm"
 }
 
 // Plugins to load in the background when a new session starts
