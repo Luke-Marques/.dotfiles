@@ -1,6 +1,6 @@
 # Better ls
 alias ls="eza -a --long --icons always"
-alias t="eza -a -T -L 1"
+alias t="eza -a -T -L 2 --icons always"
 
 # Better cd
 alias cd="z"
