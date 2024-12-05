@@ -23,3 +23,6 @@ inherits = "kanagawa-dragon"
 
 # Ruler
 "ui.virtual.ruler" = { bg = "dragonBlack4" }
+
+# Jump Labels
+"ui.virtual.jump-label" = { fg = "oniViolet", modifiers = ["bold"] }
